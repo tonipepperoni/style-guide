@@ -1,7 +1,7 @@
 # Database 
-- Generally database columns are snake_case but property names are camelCase. 
-- Eloquent is able to do the conversion automatically.
-
+- Table and field names MUST be lowercase and use snake_case.
+- Table names should use the plural form of the actual real life object it is storing. Like for example, the table name for blog posts should be posts not post.
+-Primary keys should be named “id” in the table names. While the foreign key it represents in other table should be on singularform_id. (e.g. table: post, primary key: id, foreign key: post_id )
 
 
 # Coding-Style
@@ -18,4 +18,63 @@ PHP
 - The PHP constants true, false, and null MUST be in lower case.
 - The var keyword MUST NOT be used to declare a property.
 
+Models should have relevant methods and shouldn't be so much in controllers.
+
+```php
+namespace App\Models;
+use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Menus extends Model
+{
+    use SoftDeletes;
+
+    public $table = 'menus';
+    
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+    protected $dates = ['deleted_at'];
+
+    public $fillable = [
+        'parent_id',
+        'name',
+        'tool_tips',
+        'icon',
+        'view_name',
+        'order_number'
+    ];
+
+    protected $casts = [
+        'id' => 'integer',
+        'parent_id' => 'integer',
+        'name' => 'string',
+        'tool_tips' => 'string',
+        'icon' => 'string',
+        'view_name' => 'string',
+        'order_number' => 'integer'
+    ];
+
+  
+    public static $rules = [
+        
+    ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'menus_role');
+    }
+}
+```
+
+
 Angular
+- controller names must always be capitalized e.g. FileController
+- controller filename studlyCase
+- views must be studlyCase
+- service filename must be studlyCase
+- Service name must be Capitalized e.g. FileRespository
+
+
+
+
+
