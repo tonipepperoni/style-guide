@@ -69,8 +69,8 @@ class Menus extends Model
 
 Angular
 - controller names must always be capitalized e.g. FileController
-- controller filename studlyCase
-- views must be studlyCase
+- controller filename camelCase
+- views must be camelCase
 - service filename must be studlyCase
 - Service name must be Capitalized e.g. FileRespository
 
