@@ -5,16 +5,22 @@
 
 
 
-a naming convention is always necessary if the database is expected to last and evolve with the application it supports, and here are some guidelines to establish a succinct, simple, and readable one:
+-a naming convention is always necessary if the database is expected to last and evolve with the application it supports, and here are some guidelines to establish a succinct, simple, and readable one:
 
-No limitations on table or column name size. It is better to have a descriptive name than an acronym that no one remembers or understands.
+-No limitations on table or column name size. It is better to have a descriptive name than an acronym that no one remembers or understands.
 Names that are equal have the same meaning. Avoid having fields that have the same name but with different types or meanings; this will be confusing sooner or later.
-Unless necessary, don’t be redundant. For example, in the table “Item,” there is no need to have columns like “ItemName,” “PriceOfItem,” or similar names; “Name” and “Price” are enough.
-Beware of DBE reserved words. If a column is to be called “Index,” which is a SQL reserved word, try to use a different one like “IndexNumber.”
-If sticking to the simple primary key rule (single integer auto generated), name it “Id” in every table.
-If joining to another table, define the necessary foreign key as an integer, named “Id” followed by the name of the joined table (e.g., IdItem).
-If naming constraints, use a prefix describing the constraint (e.g., “PK” or “FK”), followed by the name of the table or tables involved. Of course, using underscores (“_”) sparingly helps make things more readable.
-To name indexes, use the prefix “IDX” followed by the table name and the column or columns of the index. Also, use “UNIQUE” as a prefix or suffix if the index is unique, and underscores where necessary.
+
+-Unless necessary, don’t be redundant. For example, in the table “Item,” there is no need to have columns like “ItemName,” “PriceOfItem,” or similar names; “Name” and “Price” are enough.
+
+-Beware of DBE reserved words. If a column is to be called “Index,” which is a SQL reserved word, try to use a different one like “IndexNumber.”
+
+-If sticking to the simple primary key rule (single integer auto generated), name it “Id” in every table.
+
+-If joining to another table, define the necessary foreign key as an integer, named “Id” followed by the name of the joined table (e.g., IdItem).
+
+-If naming constraints, use a prefix describing the constraint (e.g., “PK” or “FK”), followed by the name of the table or tables involved. Of course, using underscores (“_”) sparingly helps make things more readable.
+
+-To name indexes, use the prefix “IDX” followed by the table name and the column or columns of the index. Also, use “UNIQUE” as a prefix or suffix if the index is unique, and underscores where necessary.
 
 https://www.toptal.com/database/database-design-bad-practices
 
