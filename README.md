@@ -13,6 +13,9 @@
 12) if you want to get a list of all objects then you would do <serviceName>.getList(<params>).then(function(result) { })
 13) if you want to create a object <serviceName>.create(<object>)
 14) if you want to use a variable in the view, then use $scope.<variableName> same goes for functions which have interaction with the view.
+15) no jquery, unless it is wrapped in a directive
+16) if there are relationships, go to your api function, and then use the ->with(['relation_a', 'relation_b']) method
+    
     
     
 
