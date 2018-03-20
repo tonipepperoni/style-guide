@@ -1,3 +1,22 @@
+# Steps
+1) make table in db, always use id then foreign key as id unsigned int(10), setup foreign keys
+2) run infoym api generator
+3) delete soft deletes, and deleted_at if we're not using this column as it is not necessary
+4) make sure there are not duplicate relationships. add relationships if necessary
+5) wrap the resource around a guest, to confirm it works
+6) give a name to the route, then make it an api route 
+7) log-on to superadmin and add permissions
+8) create menu item and add menu item to config.js with correct controllers and views
+9) ensure you include controller to index.html and controllers.js 
+10) make service  using the abstract factory and include it with the index.html
+11) use the service with the controller
+12) if you want to get a list of all objects then you would do <serviceName>.getList(<params>).then(function(result) { })
+13) if you want to create a object <serviceName>.create(<object>)
+14) if you want to use a variable in the view, then use $scope.<variableName> same goes for functions which have interaction with the view.
+    
+    
+
+
 # Database 
 - Table and field names MUST be lowercase and use snake_case.
 - Table names should use the plural form of the actual real life object it is storing. Like for example, the table name for blog posts should be posts not post.
